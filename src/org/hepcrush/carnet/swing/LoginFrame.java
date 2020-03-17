@@ -1,9 +1,13 @@
 package org.hepcrush.carnet.swing;
 
+import org.hepcrush.carnet.bo.User;
+import org.hepcrush.carnet.dal.UserDAO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class LoginFrame extends JFrame implements ActionListener{
     Container container = getContentPane();
@@ -14,6 +18,7 @@ public class LoginFrame extends JFrame implements ActionListener{
     JButton loginButton = new JButton("Connexion");
     JButton resetButton = new JButton("RESET");
     JCheckBox showPassword = new JCheckBox("Afficher mot de passe");
+    User user = new User();
 
 
     public LoginFrame() {
@@ -21,7 +26,6 @@ public class LoginFrame extends JFrame implements ActionListener{
         setLocationAndSize();
         addComponentsToContainer();
         addActionEvent();
-
     }
 
     public void setLayoutManager() {
@@ -59,33 +63,41 @@ public class LoginFrame extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //Coding Part of LOGIN button
         if (e.getSource() == loginButton) {
             String userText;
             String pwdText;
             userText = userTextField.getText();
-            pwdText = passwordField.getText();
-            if (userText.equalsIgnoreCase("dylan") && pwdText.equalsIgnoreCase("12345")) {
-                JOptionPane.showMessageDialog(this, "Connexion Réussi");
-            } else {
-                JOptionPane.showMessageDialog(this, "Mot de passe ou username invalide");
+            pwdText = passwordField.getText() ;
+            UserDAO userDAO = new UserDAO();
+            try {
+               User userLog= userDAO.login(userText, pwdText);
+                System.out.println(userLog);
+                if (userLog != null) {
+                    JOptionPane.showMessageDialog(this, "Connexion Réussie");
+                    this.setVisible(false);
+                    ContactsFrame cf = new ContactsFrame(userLog);
+                    cf.setTitle("Contacts");
+                    cf.setVisible(true);
+                    cf.setBounds(10,10,500,600);
+                    cf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    cf.setResizable(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Mot de passe ou username invalide");
+                }
+            } catch (SQLException | ClassNotFoundException ex) {
+                ex.printStackTrace();
             }
-
         }
-        //Coding Part of RESET button
         if (e.getSource() == resetButton) {
             userTextField.setText("");
             passwordField.setText("");
         }
-        //Coding Part of showPassword JCheckBox
         if (e.getSource() == showPassword) {
             if (showPassword.isSelected()) {
                 passwordField.setEchoChar((char) 0);
             } else {
                 passwordField.setEchoChar('*');
             }
-
-
         }
     }
 

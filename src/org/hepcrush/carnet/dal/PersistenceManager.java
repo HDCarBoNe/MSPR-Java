@@ -8,8 +8,8 @@ import static java.lang.Class.forName;
 
 public class PersistenceManager {
 
-    private static final String DRIVER_CLASS = "org.hepcrush.carnet.Driver";
-    private static final String DB_URL= "jdbc:mariadb://localhost:3306/java";
+    private static final String DRIVER_CLASS = "org.mariadb.jdbc.Driver";
+    private static final String DB_URL= "jdbc:mariadb://192.168.0.12:3306/java";
     private static final String DB_LOGIN = "javauser";
     private static final String DB_PWD = "javapwd";
     private static Connection connection;
