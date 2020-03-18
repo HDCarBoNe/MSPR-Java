@@ -69,6 +69,11 @@ public class Contact {
         this.contacttype = contacttype;
     }
 
+    public Object[] toArray(){
+        Object[] data = new Object[]{this.getFirstname(),this.getLastname(),this.getEmail(),this.getPhone(),this.getContacttype()};
+        return data;
+    }
+
     @Override
     public String toString() {
         return "Contact{" +
