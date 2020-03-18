@@ -38,11 +38,6 @@ public class UserDAO {
                 pst.setString(2, user.getLogin());
                 pst.setString(3, cryptPwd(user.getPassword()));
                 pst.executeUpdate();
-                try (ResultSet rs = pst.getGeneratedKeys()){
-                    if (rs.next()){
-                        user.setId(rs.getInt(1));
-                    }
-                }
             }
         }
     }

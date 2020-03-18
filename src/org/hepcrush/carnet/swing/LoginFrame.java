@@ -18,7 +18,7 @@ public class LoginFrame extends JFrame implements ActionListener{
     JButton loginButton = new JButton("Connexion");
     JButton resetButton = new JButton("RESET");
     JCheckBox showPassword = new JCheckBox("Afficher mot de passe");
-    User user = new User();
+    //User user = new User();
 
 
     public LoginFrame() {
