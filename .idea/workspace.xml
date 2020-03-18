@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65ea528-ed0f-413e-8f9f-b63826e21334" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_2_5_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSPR-JAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MSPR-JAVA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hepcrush/carnet/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hepcrush/carnet/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hepcrush/carnet/dal/PersistenceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hepcrush/carnet/dal/PersistenceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hepcrush/carnet/swing/iframeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hepcrush/carnet/swing/LoginFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
