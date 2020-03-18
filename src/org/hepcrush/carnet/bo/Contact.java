@@ -2,43 +2,47 @@ package org.hepcrush.carnet.bo;
 
 public class Contact {
     private int id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String email;
     private String phone;
-    private ContactType contactType;
+    private String contacttype;
 
-    public Contact(String firstName, String lastName, String email, String phone, ContactType contactType) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Contact(String firstname, String lastname, String email, String phone, String contacttype) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.phone = phone;
-        this.contactType = contactType;
+        this.contacttype = contacttype;
     }
 
     public Contact(int id, String firstname, String lastname, String email, String phone, String contacttype) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.phone = phone;
-        this.contactType = contactType;
+        this.contacttype = contacttype;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public int getId() {
+        return id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -57,23 +61,23 @@ public class Contact {
         this.phone = phone;
     }
 
-    public ContactType getContactType() {
-        return contactType;
+    public String getContacttype() {
+        return contacttype;
     }
 
-    public void setContactType(ContactType contactType) {
-        this.contactType = contactType;
+    public void setContacttype(String contacttype) {
+        this.contacttype = contacttype;
     }
 
     @Override
     public String toString() {
         return "Contact{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", contactType=" + contactType +
+                ", contactType=" +  contacttype +
                 '}';
     }
 }

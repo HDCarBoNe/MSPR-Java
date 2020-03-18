@@ -18,7 +18,7 @@ public class UserDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM t_user";
     private static final String FIND_LOG_AND_PASS = "SELECT * FROM t_user WHERE login = ? AND password = ?";
     private static final String FIND_BY_ID = "SELECT * FROM t_user WHERE id = ?";
-    private static final String FIND_ALL_CONTACTS = "SELECT * FROM t_user_contact WHERE id_user=?";
+    private static final String FIND_ALL_CONTACTS = "SELECT id,firstname,lastname,email,phone,contacttype FROM t_contacts INNER JOIN t_user_contact ON t_contacts.id = t_user_contact.id_contact WHERE t_user_contact.id_user=?";
 
     private String cryptPwd(String pwd){
         MessageDigest md = null;
@@ -121,7 +121,7 @@ public class UserDAO {
                 rs.close();
             }
         }
-        return null;
+        return contactslist;
     }
 
     public void remove(User user) throws SQLException, ClassNotFoundException{

@@ -78,7 +78,7 @@ public class LoginFrame extends JFrame implements ActionListener{
                     ContactsFrame cf = new ContactsFrame(userLog);
                     cf.setTitle("Contacts");
                     cf.setVisible(true);
-                    cf.setBounds(10,10,500,600);
+                    cf.setBounds(10,10,700,800);
                     cf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     cf.setResizable(false);
                 } else {
